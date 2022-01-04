@@ -1,1 +1,1 @@
-module Jourloy/Colored
+module github.com/Jourloy/Colored

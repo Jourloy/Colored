@@ -1,7 +1,7 @@
 package colored_test
 
 import (
-	"Jourloy/Colored"
+	"github.com/Jourloy/Colored"
 	"testing"
 )
 
