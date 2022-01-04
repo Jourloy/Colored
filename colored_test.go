@@ -8,34 +8,37 @@ import (
 var testLog = "This is test log"
 
 func TestFG(t *testing.T) {
-
-	colorText, err := colored.ChangeFG(testLog, "red")
-
-	if err != nil {
-		t.Error("Error in package: ", err)
-	} else if colorText == testLog {
+	if colorText := colored.ChangeFG(testLog, "red"); colorText == testLog {
 		t.Error("Expected not equal string, got", colorText)
+	}
+}
+
+func TestFG_Fail(t *testing.T) {
+	if colorText := colored.ChangeFG(testLog, "what"); colorText != testLog {
+		t.Error("Expected equal string, got", colorText)
 	}
 }
 
 func TestBG(t *testing.T) {
-
-	colorText, err := colored.ChangeBG(testLog, "red")
-
-	if err != nil {
-		t.Error("Error in package: ", err)
-	} else if colorText == testLog {
+	if colorText := colored.ChangeBG(testLog, "red"); colorText == testLog {
 		t.Error("Expected not equal string, got", colorText)
 	}
 }
 
+func TestBG_Fail(t *testing.T) {
+	if colorText := colored.ChangeBG(testLog, "what"); colorText != testLog {
+		t.Error("Expected equal string, got", colorText)
+	}
+}
+
 func TestOptions(t *testing.T) {
-
-	colorText, err := colored.AddOptions(testLog, "blink")
-
-	if err != nil {
-		t.Error("Error in package: ", err)
-	} else if colorText == testLog {
+	if colorText := colored.AddOptions(testLog, "blink"); colorText == testLog {
 		t.Error("Expected not equal string, got", colorText)
+	}
+}
+
+func TestOptions_Fail(t *testing.T) {
+	if colorText := colored.ChangeBG(testLog, "what"); colorText != testLog {
+		t.Error("Expected equal string, got", colorText)
 	}
 }
