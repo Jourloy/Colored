@@ -1,7 +1,5 @@
 package colored
 
-import "errors"
-
 var (
 	fG_Black   = "\x1b[30m"
 	fG_Red     = "\x1b[31m"
@@ -30,115 +28,71 @@ var (
 
 // Change foreground for text
 //
-// Second parameter:
-//
-// - black
-//
-// - red
-//
-// - green
-//
-// - yellow
-//
-// - blue
-//
-// - magenta
-//
-// - cyan
-//
-// - white
-func ChangefG(t string, fG string) (string, error) {
+// Second parameter: black | red | green | yellow | blue | magenta | cyan | white
+func ChangeFG(t string, fG string) string {
 	if fG == "black" {
-		return fG_Black + t + reset, nil
+		return fG_Black + t + reset
 	} else if fG == "red" {
-		return fG_Red + t + reset, nil
+		return fG_Red + t + reset
 	} else if fG == "green" {
-		return fG_Green + t + reset, nil
+		return fG_Green + t + reset
 	} else if fG == "yellow" {
-		return fG_Yellow + t + reset, nil
+		return fG_Yellow + t + reset
 	} else if fG == "blue" {
-		return fG_Blue + t + reset, nil
+		return fG_Blue + t + reset
 	} else if fG == "magenta" {
-		return fG_Magenta + t + reset, nil
+		return fG_Magenta + t + reset
 	} else if fG == "cyan" {
-		return fG_Cyan + t + reset, nil
+		return fG_Cyan + t + reset
 	} else if fG == "white" {
-		return fG_White + t + reset, nil
+		return fG_White + t + reset
 	} else {
-		return "", errors.New("this fG not found")
+		return t
 	}
 }
 
 // Change background for text
 //
-// Second parameter:
-//
-// - black
-//
-// - red
-//
-// - green
-//
-// - yellow
-//
-// - blue
-//
-// - magenta
-//
-// - cyan
-//
-// - white
-func ChangebG(t string, bG string) (string, error) {
+// Second parameter: black | red | green | yellow | blue | magenta | cyan | white
+func ChangeBG(t string, bG string) string {
 	if bG == "black" {
-		return bG_Black + t + reset, nil
+		return bG_Black + t + reset
 	} else if bG == "red" {
-		return bG_Red + t + reset, nil
+		return bG_Red + t + reset
 	} else if bG == "green" {
-		return bG_Green + t + reset, nil
+		return bG_Green + t + reset
 	} else if bG == "yellow" {
-		return bG_Yellow + t + reset, nil
+		return bG_Yellow + t + reset
 	} else if bG == "blue" {
-		return bG_Blue + t + reset, nil
+		return bG_Blue + t + reset
 	} else if bG == "magenta" {
-		return bG_Magenta + t + reset, nil
+		return bG_Magenta + t + reset
 	} else if bG == "cyan" {
-		return bG_Cyan + t + reset, nil
+		return bG_Cyan + t + reset
 	} else if bG == "white" {
-		return bG_White + t + reset, nil
+		return bG_White + t + reset
 	} else {
-		return "", errors.New("this bG not found")
+		return t
 	}
 }
 
 // Add some visual options for text
 //
-// Second parameter:
-//
-// - bright
-//
-// - dim
-//
-// - underscore
-//
-// - blink
-//
-// - reverse
-//
-// - hidden
-func AddOptions(t string, O string) (string, error) {
+// Second parameter: bright | dim | underscore | blink | reverse | hidden
+func AddOptions(t string, O string) string {
 	if O == "bright" {
-		return bright + t + reset, nil
+		return bright + t + reset
 	} else if O == "dim" {
-		return dim + t + reset, nil
+		return dim + t + reset
 	} else if O == "underscore" {
-		return underscore + t + reset, nil
+		return underscore + t + reset
 	} else if O == "blink" {
-		return blink + t + reset, nil
+		return blink + t + reset
 	} else if O == "reverse" {
-		return reverse + t + reset, nil
+		return reverse + t + reset
 	} else if O == "hidden" {
-		return hidden + t + reset, nil
+		return hidden + t + reset
 	} else {
-		return "", errors.New("this option not found")
+		return t
 	}
 }
